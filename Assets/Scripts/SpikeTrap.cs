@@ -16,7 +16,7 @@ public class SpikeTrap : MonoBehaviour
         if (playerHealth != null && collision.gameObject.tag == "Player")
         {
             Debug.Log("Player hit spike trap!");
-            playerHealth.TakeDamage(damageAmount);
+            playerHealth.TakeDamage();
         }
     }
 }

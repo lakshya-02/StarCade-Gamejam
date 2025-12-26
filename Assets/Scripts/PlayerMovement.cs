@@ -15,12 +15,17 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
     private Animator anim;
+    private bool facingRight = true;
+    private float originalScaleX;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        
+        // Store original scale magnitude
+        originalScaleX = Mathf.Abs(transform.localScale.x);
     }
 
     private void Update()
@@ -29,12 +34,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalInput > 0.01f)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            if (!facingRight)
+            {
+                transform.localScale = new Vector3(originalScaleX, transform.localScale.y, transform.localScale.z);
+                facingRight = true;
+            }
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
         }
         else if (horizontalInput < -0.01f)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (facingRight)
+            {
+                transform.localScale = new Vector3(-originalScaleX, transform.localScale.y, transform.localScale.z);
+                facingRight = false;
+            }
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
         }
 
@@ -46,10 +59,9 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             Jump();
-            jumpCounter = 1;
         }
     }
     private void Jump()
@@ -58,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             anim.SetBool("jump", true);
+            jumpCounter++;
         }
     }
     private bool isGrounded()
