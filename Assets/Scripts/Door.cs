@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Door : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
+    [SerializeField] private Sprite newsprite;
     
     private void Awake()
     {
@@ -17,13 +19,11 @@ public class Door : MonoBehaviour
     {
         if (playerMovement.jumpCounter >= 1)
         {
-            spriteRenderer.enabled = true;
-            boxCollider.enabled = true;
+            spriteRenderer.sprite = newsprite;
         }
         else
         {
-            spriteRenderer.enabled = false;
-            boxCollider.enabled = false;
+            spriteRenderer.enabled = true;
         }
     }
 
