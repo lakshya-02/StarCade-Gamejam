@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
-        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
         
         if (lockedSprite != null)
         {
