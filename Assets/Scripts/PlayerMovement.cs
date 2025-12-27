@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.localScale = new Vector3(originalScaleX, transform.localScale.y, transform.localScale.z);
                 facingRight = true;
             }
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
         }
         else if (horizontalInput < -0.01f)
         {
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.localScale = new Vector3(-originalScaleX, transform.localScale.y, transform.localScale.z);
                 facingRight = false;
             }
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
         }
 
         anim.SetBool("run", horizontalInput != 0 && isGrounded());
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded())
         {
-            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            body.linearVelocity = new Vector2(body.linearVelocity.x, jumpPower);
             anim.SetBool("jump", true);
             jumpCounter++;
         }
