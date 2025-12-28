@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
@@ -7,11 +8,14 @@ public class SpikeTrap : MonoBehaviour
     private Health health;
     private Vector3 originalPosition;
     private bool isRetracted = false;
-
+    [Header("Spike Trap Settings")]
     [SerializeField] private float retractDistance = 1f;
     [SerializeField] private float retractSpeed;
     [SerializeField] private float delayBeforeRise;
     [SerializeField] private float delayBeforeRetract;
+    [Header("Audio")]
+    [SerializeField] private AudioClip spikeUpSound;
+    [SerializeField] private AudioClip spikeDownSound;
 
     private void Awake()
     {
@@ -53,6 +57,7 @@ public class SpikeTrap : MonoBehaviour
         Vector3 targetPosition = originalPosition - new Vector3(0, retractDistance, 0);
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
+            SoundManager.instance.Playsound(spikeDownSound);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, retractSpeed * Time.deltaTime);
             yield return null;
         }
@@ -63,6 +68,7 @@ public class SpikeTrap : MonoBehaviour
         // Move back up
         while (Vector3.Distance(transform.position, originalPosition) > 0.01f)
         {
+            SoundManager.instance.Playsound(spikeUpSound);
             transform.position = Vector3.MoveTowards(transform.position, originalPosition, retractSpeed * Time.deltaTime);
             yield return null;
         }

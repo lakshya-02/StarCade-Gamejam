@@ -15,8 +15,8 @@ public class PlayerFollow : MonoBehaviour
 			return;
 		}
 
-		Vector3 desiredPosition = target.position + offset;
-		desiredPosition.x = Mathf.Max(desiredPosition.x, minX);
+		Vector3 desiredPosition = transform.position;
+		desiredPosition.x = Mathf.Max(target.position.x + offset.x, minX);
 		transform.position = desiredPosition;
 	}
 }
