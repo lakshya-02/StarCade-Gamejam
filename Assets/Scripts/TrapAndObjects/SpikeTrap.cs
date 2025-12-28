@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
-    private Collider2D spikeCollider;
+    public Collider2D spikeCollider;
     private Health health;
     private Vector3 originalPosition;
     private bool isRetracted = false;
