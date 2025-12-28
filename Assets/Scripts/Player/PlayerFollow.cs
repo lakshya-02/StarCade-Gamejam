@@ -6,7 +6,8 @@ public class PlayerFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset = new Vector3(0f, 0f, -10f);
-	[SerializeField] private float minX = -5f;
+	[SerializeField] private float minX;
+	[SerializeField] private float maxX;
 
 	private void LateUpdate()
 	{
@@ -16,7 +17,7 @@ public class PlayerFollow : MonoBehaviour
 		}
 
 		Vector3 desiredPosition = transform.position;
-		desiredPosition.x = Mathf.Max(target.position.x + offset.x, minX);
+		desiredPosition.x = Mathf.Clamp(target.position.x + offset.x, minX, maxX);
 		transform.position = desiredPosition;
 	}
 }

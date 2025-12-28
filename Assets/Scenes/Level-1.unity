@@ -2142,6 +2142,7 @@ MonoBehaviour:
   target: {fileID: 1736807881}
   offset: {x: 0.55, y: 2.11, z: -10}
   minX: -3.65
+  maxX: 3.65
 --- !u!1 &542337430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,13 +4105,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 727205a00609acb4a8fd76c1717bba96, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 0
+  m_Volume: 0.15
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 130
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
