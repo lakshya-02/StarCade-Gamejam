@@ -1371,6 +1371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad91b40869a0f418b393152a7d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
+  retractDistance: 1
+  retractSpeed: 3
+  delayBeforeRise: 0.3
+  delayBeforeRetract: 3
 --- !u!1 &483325146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1892,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad91b40869a0f418b393152a7d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
+  retractDistance: 1
+  retractSpeed: 3
+  delayBeforeRise: 0.3
+  delayBeforeRetract: 3
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,6 +2131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad91b40869a0f418b393152a7d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
+  retractDistance: 1
+  retractSpeed: 3
+  delayBeforeRise: 0.3
+  delayBeforeRetract: 3
 --- !u!1 &713149037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad91b40869a0f418b393152a7d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
+  retractDistance: 1
+  retractSpeed: 3
+  delayBeforeRise: 0.3
+  delayBeforeRetract: 3
 --- !u!1 &1362196430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,6 +5578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad91b40869a0f418b393152a7d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeTrap
+  retractDistance: 1
+  retractSpeed: 3
+  delayBeforeRise: 0.3
+  delayBeforeRetract: 3
 --- !u!1 &1861552561
 GameObject:
   m_ObjectHideFlags: 0
