@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool isUnlocked = false;
     private bool playerInRange = false;
+    [SerializeField] private AudioClip OpenDoorAudio;
     
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Door : MonoBehaviour
         // Check if player has jumped enough times to unlock
         if (!isUnlocked && playerMovement != null && playerMovement.jumpCounter >= requiredJumps)
         {
+            SoundManager.instance.Playsound(OpenDoorAudio);
             UnlockDoor();
         }
         
@@ -52,6 +54,7 @@ public class Door : MonoBehaviour
     private void InteractWithDoor()
     {
         Debug.Log("Level Complete!");
+        SoundManager.instance.Playsound(OpenDoorAudio);
         
         // Load next level after a short delay
         Invoke("LoadNextLevel", 1.5f);

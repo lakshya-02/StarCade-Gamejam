@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float deathRestartDelay = 1f;
     private SpriteRenderer spriteRenderer;
     private bool isDead = false;
+    [SerializeField] private AudioClip deathAudio;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class Health : MonoBehaviour
     {
         isDead = true;
         Debug.Log("Player died! Restarting level...");
+        SoundManager.instance.Playsound(deathAudio);
         
         // Notify GameManager
         if (GameManager.Instance != null)

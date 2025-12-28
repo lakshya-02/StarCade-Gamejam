@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private bool facingRight = true;
     private float originalScaleX;
+    [SerializeField] private AudioClip JumpAudio;
+    [SerializeField] private AudioClip RunAudio;
+    private bool isRunning = false;
+    private AudioSource runAudioSource;
+    private AudioSource jumpAudioSource;
 
     private void Awake()
     {
@@ -26,6 +33,16 @@ public class PlayerMovement : MonoBehaviour
         
         // Store original scale magnitude
         originalScaleX = Mathf.Abs(transform.localScale.x);
+        
+        // Create a dedicated AudioSource for running sound
+        runAudioSource = gameObject.AddComponent<AudioSource>();
+        runAudioSource.loop = true;
+        runAudioSource.playOnAwake = false;
+
+        // Create a dedicated AudioSource for jumping sound
+        jumpAudioSource = gameObject.AddComponent<AudioSource>();
+        jumpAudioSource.loop = false;
+        jumpAudioSource.playOnAwake = false;
     }
 
     private void Update()
@@ -54,6 +71,23 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("run", horizontalInput != 0 && isGrounded());
         anim.SetBool("isGrounded", isGrounded());
         
+        // Handle running audio
+        bool shouldBeRunning = horizontalInput != 0 && isGrounded();
+        if (shouldBeRunning && !isRunning)
+        {
+            if (RunAudio != null)
+            {
+                runAudioSource.clip = RunAudio;
+                runAudioSource.Play();
+            }
+            isRunning = true;
+        }
+        else if (!shouldBeRunning && isRunning)
+        {
+            runAudioSource.Stop();
+            isRunning = false;
+        }
+        
         if (isGrounded())
         {
             anim.SetBool("jump", false);
@@ -68,6 +102,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded())
         {
+            jumpAudioSource.clip = JumpAudio;
+            jumpAudioSource.Play();
             body.linearVelocity = new Vector2(body.linearVelocity.x, jumpPower);
             anim.SetBool("jump", true);
             jumpCounter++;
