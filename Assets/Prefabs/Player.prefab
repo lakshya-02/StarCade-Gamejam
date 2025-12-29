@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.17, y: -2.2, z: 0}
-  m_LocalScale: {x: 8, y: 9, z: 1}
+  m_LocalScale: {x: 9.3112, y: 11.3598, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5606655451354427335, guid: 7608c318e89b88b4b8af43938a2f0431, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -224,4 +224,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathRestartDelay: 1
+  deathEffectPrefab: {fileID: 3076225310452302191, guid: 6065f9bef1bc07348bc66bb3200cb1aa, type: 3}
   deathAudio: {fileID: 8300000, guid: a02ac84757a56bb40a9b8b86f3ebfbea, type: 3}
