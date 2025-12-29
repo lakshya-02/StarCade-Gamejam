@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower;
     public int jumpCounter = 0;
     private float horizontalInput;
+    private float gravityScale = 1f;
 
     [Header("Layers")]
     [SerializeField] private LayerMask groundLayer;
@@ -34,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         // Store original scale magnitude
         originalScaleX = Mathf.Abs(transform.localScale.x);
         
+        // Store initial gravity scale
+        gravityScale = body.gravityScale;
+        
         // Create a dedicated AudioSource for running sound
         runAudioSource = gameObject.AddComponent<AudioSource>();
         runAudioSource.loop = true;
@@ -47,7 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // Get input from both WASD and Arrow keys
         horizontalInput = Input.GetAxis("Horizontal");
+        
+        // Flip gravity on mouse click
+        if (Input.GetMouseButtonDown(0))
+        {
+            FlipGravity();
+        }
 
         if (horizontalInput > 0.01f)
         {
@@ -93,7 +104,8 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        // Only Space key for jumping
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
@@ -109,6 +121,16 @@ public class PlayerMovement : MonoBehaviour
             jumpCounter++;
         }
     }
+    
+    private void FlipGravity()
+    {
+        gravityScale *= -1;
+        body.gravityScale = gravityScale;
+        
+        // Flip the player sprite vertically
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+    }
+    
     private bool isGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);

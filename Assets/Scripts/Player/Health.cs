@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float deathRestartDelay = 1f;
+    [SerializeField] private GameObject deathEffectPrefab;
     private SpriteRenderer spriteRenderer;
     private bool isDead = false;
     [SerializeField] private AudioClip deathAudio;
@@ -26,6 +27,14 @@ public class Health : MonoBehaviour
         isDead = true;
         Debug.Log("Player died! Restarting level...");
         SoundManager.instance.Playsound(deathAudio);
+        
+        // Instantiate death effect and destroy it before respawn
+        if (deathEffectPrefab != null)
+        {
+            GameObject deathEffect = Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+            // Destroy the effect slightly before the level restarts for smooth transition
+            Destroy(deathEffect, deathRestartDelay - 0.1f);
+        }
         
         // Notify GameManager
         if (GameManager.Instance != null)

@@ -46292,6 +46292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9079012698376226221, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
+      propertyPath: deathEffectPrefab
+      value: 
+      objectReference: {fileID: 3076225310452302191, guid: 6065f9bef1bc07348bc66bb3200cb1aa, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
