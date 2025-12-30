@@ -120,6 +120,15 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("jump", true);
             jumpCounter++;
         }
+
+        else if (isOnRoof())
+        {
+            jumpAudioSource.clip = JumpAudio;
+            jumpAudioSource.Play();
+            body.linearVelocity = new Vector2(body.linearVelocity.x, -jumpPower);
+            anim.SetBool("jump", true);
+            jumpCounter++;
+        }
     }
     
     private void FlipGravity()
@@ -134,6 +143,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        return raycastHit.collider != null;
+    }
+
+    private bool isOnRoof()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.up, 0.1f, groundLayer);
         return raycastHit.collider != null;
     }
 }
