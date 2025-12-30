@@ -1,98 +1,118 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Door : MonoBehaviour
 {
+    [Header("Unlock Condition")]
     [SerializeField] private int requiredJumps = 5;
+
+    [Header("Door Sprites")]
     [SerializeField] private Sprite lockedSprite;
     [SerializeField] private Sprite unlockedSprite;
-    
+
+    [Header("End Screen UI")]
+    [SerializeField] private GameObject endScreen;
+    [SerializeField] private TextMeshProUGUI deathText;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource bgmSource;     // Background music
+    [SerializeField] private AudioSource sfxSource;     // Sound effects
+    [SerializeField] private AudioClip doorOpenAudio;
+    [SerializeField] private AudioClip gameCompleteMusic;
+
     private PlayerMovement playerMovement;
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D boxCollider;
+
     private bool isUnlocked = false;
     private bool playerInRange = false;
-    [SerializeField] private AudioClip OpenDoorAudio;
-    
+    private bool gameEnded = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = FindAnyObjectByType<PlayerMovement>();
-        
+
         if (lockedSprite != null)
-        {
             spriteRenderer.sprite = lockedSprite;
-        }
+
+        if (endScreen != null)
+            endScreen.SetActive(false);
     }
-    
-    void Update()
+
+    private void Update()
     {
-        // Check if player has jumped enough times to unlock
-        if (!isUnlocked && playerMovement != null && playerMovement.jumpCounter >= requiredJumps)
+        // Unlock door
+        if (!isUnlocked && playerMovement != null &&
+            playerMovement.jumpCounter >= requiredJumps)
         {
-            SoundManager.instance.Playsound(OpenDoorAudio);
             UnlockDoor();
         }
-        
-        // Allow interaction only if unlocked and player is in range
-        if (isUnlocked && playerInRange && Input.GetKeyDown(KeyCode.E))
+
+        // End game
+        if (isUnlocked && playerInRange && !gameEnded)
         {
-            InteractWithDoor();
+            EndGame();
+        }
+
+        // ENTER → Main Menu
+        if (gameEnded && Input.GetKeyDown(KeyCode.Return))
+        {
+            LoadMainMenu();
         }
     }
-    
+
     private void UnlockDoor()
     {
         isUnlocked = true;
+
         if (unlockedSprite != null)
-        {
             spriteRenderer.sprite = unlockedSprite;
-        }
-        Debug.Log("Door unlocked! Press E to interact.");
+
+        if (sfxSource && doorOpenAudio)
+            sfxSource.PlayOneShot(doorOpenAudio);
     }
-    
-    private void InteractWithDoor()
+
+    private void EndGame()
     {
-        Debug.Log("Level Complete!");
-        SoundManager.instance.Playsound(OpenDoorAudio);
-        
-        // Load next level after a short delay
-        Invoke("LoadNextLevel", 1.5f);
+        gameEnded = true;
+
+        // Pause everything
+        Time.timeScale = 0f;
+
+        // Audio
+        if (bgmSource)
+            bgmSource.Stop();
+
+        if (sfxSource && gameCompleteMusic)
+            sfxSource.PlayOneShot(gameCompleteMusic);
+
+        // Show total deaths
+        if (deathText != null && GameManager.Instance != null)
+        {
+            deathText.text = "Total Deaths: " + GameManager.Instance.totalDeaths;
+        }
+
+        // Show End Screen
+        if (endScreen)
+            endScreen.SetActive(true);
     }
-    
-    private void LoadNextLevel()
+
+    private void LoadMainMenu()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.LoadNextLevel();
-        }
-        else
-        {
-            Debug.LogWarning("GameManager not found! Add GameManager to scene.");
-        }
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
+        if (collision.CompareTag("Player"))
             playerInRange = true;
-            if (!isUnlocked)
-            {
-                Debug.Log($"Door locked! Jump {requiredJumps - playerMovement.jumpCounter} more times to unlock.");
-            }
-            else
-            {
-                Debug.Log("Press E to interact with door.");
-            }
-        }
     }
-    
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
+        if (collision.CompareTag("Player"))
             playerInRange = false;
-        }
     }
 }
