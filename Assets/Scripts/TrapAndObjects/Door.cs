@@ -5,7 +5,7 @@ using TMPro;
 public class Door : MonoBehaviour
 {
     [Header("Unlock Condition")]
-    [SerializeField] private int requiredJumps = 5;
+    [SerializeField] private int requiredFlips = 5;
 
     [Header("Door Sprites")]
     [SerializeField] private Sprite lockedSprite;
@@ -44,7 +44,7 @@ public class Door : MonoBehaviour
     {
         // Unlock door
         if (!isUnlocked && playerMovement != null &&
-            playerMovement.jumpCounter >= requiredJumps)
+            playerMovement.flipCounter >= requiredFlips)
         {
             UnlockDoor();
         }

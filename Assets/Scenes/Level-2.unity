@@ -8087,8 +8087,8 @@ Transform:
   m_GameObject: {fileID: 329499498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.079, y: 0.054, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -15.127, y: 0.054, z: 0}
+  m_LocalScale: {x: 5.6005, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236650633}
@@ -8105,7 +8105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c2c2c797c3104ea0fab60198b8d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredJumps: 5
+  requiredFlips: 20
   lockedSprite: {fileID: 21300000, guid: 452f13d7fbdea7944873ff8142335723, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 11495d16e85c1784f871a53f9c027df4, type: 3}
   endScreen: {fileID: 0}
@@ -59766,19 +59766,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6819957823150415337, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 8.029
       objectReference: {fileID: 0}
     - target: {fileID: 6819957823150415337, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 12.593
       objectReference: {fileID: 0}
     - target: {fileID: 6819957823150415337, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.1
+      value: -9.0113
       objectReference: {fileID: 0}
     - target: {fileID: 6819957823150415337, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.02
+      value: -16.8903
       objectReference: {fileID: 0}
     - target: {fileID: 6819957823150415337, guid: ba0165a737b56cf4bb1aa9408984962f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -59934,7 +59934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c2c2c797c3104ea0fab60198b8d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredJumps: 5
+  requiredFlips: 5
   lockedSprite: {fileID: 21300000, guid: 452f13d7fbdea7944873ff8142335723, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 11495d16e85c1784f871a53f9c027df4, type: 3}
   endScreen: {fileID: 509580601}

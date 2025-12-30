@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
     public int jumpCounter = 0;
+    public int flipCounter = 0;
     private float horizontalInput;
     private float gravityScale = 1f;
 
@@ -138,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
         
         // Flip the player sprite vertically
         transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+        
+        flipCounter++;
     }
     
     private bool isGrounded()
