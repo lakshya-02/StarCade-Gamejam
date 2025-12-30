@@ -1,14 +1,14 @@
 # StarCade Game Jam Entry
-## Illegal Move
+## ILLegal Move
 
 **Theme:** Rules are meant to be broken  
 **Developed during:** StarCade Game Jam (6 Days)
 
-Illegal Move is a 2D platformer game developed for the StarCade Game Jam. The game challenges players to rethink traditional gameplay rules and intentionally break them to progress through levels.
+ILLegal Move is a 2D platformer game developed for the StarCade Game Jam. The game challenges players to rethink traditional gameplay rules and intentionally break them to progress through levels.
 
 ## About the Game
 
-Illegal Move is a platformer where every level introduces a unique twist, and players must adapt to complete each stage. This repository contains all the source code, assets, and project files created during the game jam.
+ILLegal Move is a platformer where every level introduces a unique twist, and players must adapt to complete each stage. This repository contains all the source code, assets, and project files created during the game jam.
 
 ## Key Features
 
