@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door2 : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Door2 : MonoBehaviour
         {
             if (isUnlocked)
             {
+                SceneManager.LoadScene(2);
                 spriteRenderer.enabled = false;
             }
             else
