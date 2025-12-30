@@ -227,9 +227,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 160
-        width: 32
-        height: 32
+        y: 164
+        width: 30
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: scifitiles-sheet_6
       rect:
         serializedVersion: 2
-        x: 191
-        y: 160
-        width: 33
-        height: 32
+        x: 198
+        y: 163
+        width: 24
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: scifitiles-sheet_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 160
-        width: 32
-        height: 32
+        x: 230
+        y: 164
+        width: 26
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,9 +293,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 131
-        width: 32
-        height: 28
+        y: 132
+        width: 31
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,8 +316,8 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 97
-        width: 32
-        height: 32
+        width: 31
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,8 +338,8 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 97
-        width: 32
-        height: 32
+        width: 31
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,7 +361,7 @@ TextureImporter:
         x: 224
         y: 97
         width: 32
-        height: 32
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,7 +383,7 @@ TextureImporter:
         x: 224
         y: 132
         width: 32
-        height: 27
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,6 +420,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: scifitiles-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738687a91c0655148bbc6899907a24b4
+      internalID: 407573371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -440,6 +462,7 @@ TextureImporter:
       scifitiles-sheet_11: -305368607
       scifitiles-sheet_12: -346848276
       scifitiles-sheet_13: -1304386415
+      scifitiles-sheet_14: 407573371
       scifitiles-sheet_2: 1023336504
       scifitiles-sheet_3: 1910355661
       scifitiles-sheet_4: -823172338
