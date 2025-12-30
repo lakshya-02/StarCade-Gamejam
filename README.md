@@ -1,66 +1,52 @@
-# ⭐ StarCade Game Jam Entry  
+# StarCade Game Jam Entry
 ## Illegal Move
 
-> **Theme:** Rules are meant to be broken  
-> **Developed during:** StarCade Game Jam (6 Days)
+**Theme:** Rules are meant to be broken  
+**Developed during:** StarCade Game Jam (6 Days)
 
-**Illegal Move** is a fun and creative 2D game developed as part of the **StarCade Game Jam**. Built under tight time constraints, the game challenges players to rethink traditional gameplay rules and intentionally break them to progress. 🚀
+Illegal Move is a 2D platformer game developed for the StarCade Game Jam. The game challenges players to rethink traditional gameplay rules and intentionally break them to progress through levels.
 
----
+## About the Game
 
-## 🎮 About the Game
+Illegal Move is a platformer where every level introduces a unique twist, and players must adapt to complete each stage. This repository contains all the source code, assets, and project files created during the game jam.
 
-**Illegal Move** is a platformer where every level introduces a twist and player must adapt to the twist in order to complete the level.
+## Key Features
 
-The twist?  
+- Gravity-flipping mechanic that defies traditional platforming rules
+- Multiple levels with unique rule-breaking challenges
+- Death counter system that tracks your progress
+- Puzzle-solving gameplay where breaking the rules is the solution
+- Developed in 6 days for the StarCade Game Jam
 
-This repository contains all the **source code, assets, and project files** created during the game jam.
-
----
-
-## ✨ Key Features
-
-- Creative and experimental level design  
-- Short, clever puzzles with unexpected solutions  
-- Built entirely within a **6-day game jam deadline**
-
----
-
-## 🛠️ Built With
+## Built With
 
 | Category | Tools |
 |--------|------|
 | Game Engine | Unity |
 | Programming Language | C# |
-| Assets | Unity Asset Store, itch.io, Pixabay, Gemini |
+| Assets | Unity Asset Store, itch, Pixabay |
 
----
+## How to Play
 
-## 🚀 How to Play
-
-### 🎮 Controls
+### Controls
 
 | Action | Input |
 |------|------|
-| Move | ← → / A D |
+| Move | Arrow Keys / A D |
 | Jump | Space |
 
-### 🎯 Objective
+### Objective
 
-Complete each stage to reach the end — but every level has a twist.  
-The solution lies in figuring out **which rule must be broken**.
+Complete each stage to reach the end. Every level has a twist, and the solution lies in figuring out which rule must be broken.
 
----
-
-## 🖼️ Screenshots
+## Screenshots
 
 | Gameplay | Gameplay | Gameplay |
 |---------|----------|----------|
 | <img src="Screenshots/Screenshot%20(5).png" width="250"/> | <img src="Screenshots/Screenshot%20(6).png" width="250"/> | <img src="Screenshots/Screenshot%20(7).png" width="250"/> |
 | <img src="Screenshots/Screenshot%20(8).png" width="250"/> | <img src="Screenshots/Screenshot%20(9).png" width="250"/> | <img src="Screenshots/Screenshot%20(10).png" width="250"/> |
 
-
-## 📥 Get Started (Local Setup)
+## Get Started (Local Setup)
 
 ### Clone the Repository
 
@@ -68,50 +54,32 @@ The solution lies in figuring out **which rule must be broken**.
 git clone https://github.com/lakshya-02/StarCade-Gamejam.git
 ```
 
+### Open in Unity
 
-## 🚀 Open in Unity
-
-1. Launch **Unity Hub**
-2. Click **Open Project**
+1. Launch Unity Hub
+2. Click Open Project
 3. Select the cloned project folder
 
-### ▶️ Build & Run
+### Build and Run
+
 - Open the project in Unity
-- Press **Play** in the Unity Editor  
-  **OR**
+- Press Play in the Unity Editor, or
 - Build the game using Unity’s build system
 
----
+## License
 
-## 🧩 Build Instructions
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-- **Platform:** Windows  
-- Use Unity’s default **Windows Build Settings**  
-- Ensure all required scenes are added under  
-  **File → Build Settings**
+## Acknowledgements
 
----
+- StarCade Game Jam organizers
+- Asset creators and open-source resources
+- Everyone who tested and provided feedback
 
-## 📜 License
+## Team and Credits
 
-This project is licensed under the **MIT License**.  
-See the `LICENSE` file for more details.
-
----
-
-## 🎉 Acknowledgements
-
-- StarCade Game Jam organizers  
-- Asset creators and open-source resources  
-- Everyone who tested and provided feedback  
-
----
-
-## 📬 Team & Credits
-
-**Developed by:**
-
-- Aaditya Raj — `Aadir0`  
-- Om Mittal — `Om-Mittal486`  
-- Lakshya Singh — `lakshya-02`  
-- Ansh — `anshch005`  
+Developed by:
+- Lakshya Singh ([lakshya-02](https://github.com/lakshya-02))
+- Aaditya Raj ([Aadir0](https://github.com/Aadir0))
+- Om Mittal ([Om-Mittal486](https://github.com/Om-Mittal486))
+- Ansh ([anshch005](https://github.com/anshch005))
