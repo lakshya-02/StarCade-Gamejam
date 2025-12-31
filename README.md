@@ -80,5 +80,5 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 Developed by:
 - Lakshya Singh ([lakshya-02](https://github.com/lakshya-02))
 - Aaditya Raj ([Aadir0](https://github.com/Aadir0))
-- Om Mittal ([Om-Mittal486](https://github.com/Om-Mittal486)
+- Om Mittal ([Om-Mittal486](https://github.com/Om-Mittal486))
 - Ansh ([anshch005](https://github.com/anshch005))
