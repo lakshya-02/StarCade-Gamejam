@@ -12,7 +12,6 @@ ILLegal Move is a platformer where every level introduces a unique twist, and pl
 
 ## Key Features
 
-- Gravity-flipping mechanic that defies traditional platforming rules
 - Multiple levels with unique rule-breaking challenges
 - Death counter system that tracks your progress
 - Puzzle-solving gameplay where breaking the rules is the solution
@@ -81,5 +80,5 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 Developed by:
 - Lakshya Singh ([lakshya-02](https://github.com/lakshya-02))
 - Aaditya Raj ([Aadir0](https://github.com/Aadir0))
-- Om Mittal ([Om-Mittal486](https://github.com/Om-Mittal486))
+- Om Mittal ([Om-Mittal486](https://github.com/Om-Mittal486)
 - Ansh ([anshch005](https://github.com/anshch005))
