@@ -14,10 +14,20 @@ public class PlatformPatrol : MonoBehaviour
     [Header("Idle Behaviour")]
     [SerializeField] private float IdleDuration;
     private float idleTimer;
+    private Health health;
 
     private void Awake()
     {
         initScale = enemy.localScale;
+        health = FindAnyObjectByType<Health>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            health.TakeDamage();
+        }
     }
     private void Update()
     {
