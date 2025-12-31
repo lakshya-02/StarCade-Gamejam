@@ -4,7 +4,7 @@
 **Theme:** Rules are meant to be broken  
 **Developed during:** StarCade Game Jam (6 Days)
 
-ILLegal Move is a 2D platformer game developed for the StarCade Game Jam. The game challenges players to rethink traditional gameplay rules and intentionally break them to progress through levels.
+ILLegal Move is a 2D platformer game developed for the StarCade Game Jam. The game challenges players to rethink traditional gameplay rules.
 
 ## About the Game
 
@@ -12,9 +12,9 @@ ILLegal Move is a platformer where every level introduces a unique twist, and pl
 
 ## Key Features
 
-- Multiple levels with unique rule-breaking challenges
+- Multiple levels with unique twist
 - Death counter system that tracks your progress
-- Puzzle-solving gameplay where breaking the rules is the solution
+- Puzzle-solving gameplay
 - Developed in 6 days for the StarCade Game Jam
 
 ## Built With
@@ -36,7 +36,7 @@ ILLegal Move is a platformer where every level introduces a unique twist, and pl
 
 ### Objective
 
-Complete each stage to reach the end. Every level has a twist, and the solution lies in figuring out which rule must be broken.
+Complete each stage to reach the end. Every level has a twist, and the solution lies in figuring out te solution to the twist.
 
 ## Screenshots
 
